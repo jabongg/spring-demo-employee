@@ -20,8 +20,6 @@ public class HibernateTester {
 			System.out.println("MySql Database Version is:::");
 			System.out.println(result);
 
-        
-	        
 	        Address add1 = new Address();
 	        add1.setStreet("U - 16/81");
 	        add1.setCity("Gurgaon");
