@@ -14,8 +14,11 @@
 		<property name="hibernate.connection.password">postgres</property>
 		<property name="hibernate.hbm2ddl.auto">create</property>
 		<property name="hibernate.id.new_generator_mappings">true</property>
-		<property name="hibernate.show_sql"></property>
-		<mapping class="com.spring.learning.employee.dto.EmployeeDTO"></mapping>
+		<property name="hibernate.show_sql">true</property>
+<!-- 		<mapping class="com.spring.learning.employee.dto.EmployeeDTO"></mapping>
+ -->		<mapping class="com.spring.learning.employee.dto.Vehicle"></mapping>
+		<mapping class="com.spring.learning.employee.dto.UserDetails"></mapping>		
+		
 
 
 
