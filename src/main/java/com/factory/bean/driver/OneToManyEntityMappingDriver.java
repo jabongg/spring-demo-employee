@@ -1,14 +1,16 @@
 package com.factory.bean.driver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.spring.learning.employee.dto.EmployeeDTO;
 import com.spring.learning.employee.dto.UserDetails;
 import com.spring.learning.employee.dto.Vehicle;
 
-public class OneToOneEntityMappingDriver {
+public class OneToManyEntityMappingDriver {
 
 	public static void main(String[] args) {
 
@@ -21,15 +23,23 @@ public class OneToOneEntityMappingDriver {
         	UserDetails user = new UserDetails();
         	user.setUserName("Michael Page");
         
+        	List<Vehicle> vehicles = new ArrayList<>();
         	
-        	Vehicle vehicle = new Vehicle();
-        	vehicle.setVehicleName("Bugati chiron");
+        	Vehicle vehicle1 = new Vehicle();
+        	vehicle1.setVehicleName("Bugati chiron");
  	        
         	
-        	user.setVehicle(vehicle);
+        	Vehicle vehicle2 = new Vehicle();
+        	vehicle2.setVehicleName("Porsche 911");
+ 	        
+        	
+        	vehicles.add(vehicle1);
+        	vehicles.add(vehicle2);
+        	
+        	user.setVehicle(vehicles);
         	
         	session.save(user);  //saving user
-        	session.save(vehicle); //saving vehicle
+        	//session.save(vehicle); //saving vehicle
         	
 			t.commit();
 			System.out.println("successfully saved");

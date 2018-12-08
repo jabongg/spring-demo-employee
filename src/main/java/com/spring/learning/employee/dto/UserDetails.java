@@ -1,11 +1,13 @@
 package com.spring.learning.employee.dto;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 @Entity(name="user_details")
 public class UserDetails {
@@ -15,9 +17,8 @@ public class UserDetails {
 	private int userId;
 	private String userName;
 
-	@OneToOne
-	@JoinColumn(name="vehicle_id")
-	private Vehicle vehicle;
+	@OneToMany(cascade={CascadeType.ALL})
+	private List<Vehicle> vehicle;
 	
 	public int getUserId() {
 		return userId;
@@ -35,11 +36,12 @@ public class UserDetails {
 		this.userName = userName;
 	}
 	
-	public Vehicle getVehicle() {
+
+	public List<Vehicle> getVehicle() {
 		return vehicle;
 	}
 
-	public void setVehicle(Vehicle vehicle) {
+	public void setVehicle(List<Vehicle> vehicle) {
 		this.vehicle = vehicle;
 	}
 
