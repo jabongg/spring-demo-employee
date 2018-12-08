@@ -2,6 +2,12 @@ package com.dsal.java;
 
 public class ArrayUnique {
 
+	static int i;
+	final int f;
+	{f = 10;}
+	
+	boolean b;
+	
 	/* source : geeksforgeeks
 	 * Given a sorted integer array. We need to make array elements distinct by increasing values and keeping array sum minimum possible. We need to print the minimum possible sum as output.
 
@@ -23,6 +29,8 @@ public class ArrayUnique {
 		so result is sum of each elements.  
 	 */
 	public static void main(String[] args) {
+		ArrayUnique au = new ArrayUnique();
+		System.out.println(i + " " + au.f + " " + au.b);
 		// sorted array
 		int[] A = {2, 2, 3, 5, 6};
 		

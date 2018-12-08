@@ -1,12 +1,22 @@
 package com.spring.learning.employee.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Table;
 
+@Embeddable
 public class Address {
 
+	@Column(name="emp_street")
 	private String street;
+	
+	@Column(name="emp_city")
 	private String city;
+	
+	@Column(name="emp_state")
 	private String state;
+	
+	@Column(name="emp_country")
 	private String country;
 	
 	public String getStreet() {
@@ -32,6 +42,10 @@ public class Address {
 	}
 	public void setCountry(String country) {
 		this.country = country;
+	}
+	@Override
+	public String toString() {
+		return "Address [street=" + street + ", city=" + city + ", state=" + state + ", country=" + country + "]";
 	}
 	
 	
