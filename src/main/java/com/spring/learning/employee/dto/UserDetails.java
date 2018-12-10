@@ -7,9 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity(name="user_details")
 public class UserDetails {
@@ -19,11 +17,7 @@ public class UserDetails {
 	private int userId;
 	private String userName;
 
-	@OneToMany(mappedBy="user", cascade={CascadeType.ALL})
-	/*@JoinTable(joinColumns=@JoinColumn(name="USER_ID"),
-	inverseJoinColumns=@JoinColumn(name="VEHICLE_ID"))*/
-	
-	
+	@ManyToMany(cascade=CascadeType.ALL)
 	private List<Vehicle> vehicle;
 	
 	public int getUserId() {
