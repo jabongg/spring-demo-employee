@@ -6,13 +6,13 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 	 <context:annotation-config/> 
-	<bean id="employeeController" class="com.spring.learning.employee.controller.EmployeeController" >
+	<bean id="employeeController" class="com.spring.learning.controller.EmployeeController" >
 	</bean>
 	
-	<bean id="employeeService" class="com.spring.learning.employee.service.impl.EmployeeServiceImpl" >
+	<bean id="employeeService" class="com.spring.learning.service.impl.EmployeeServiceImpl" >
 	</bean>
 	
-	<bean id="employeeDAO" class="com.spring.learning.employee.dao.impl.EmployeeDAOImpl" >
+	<bean id="employeeDAO" class="com.spring.learning.dao.impl.EmployeeDAOImpl" >
 	</bean>
 	
 </beans>

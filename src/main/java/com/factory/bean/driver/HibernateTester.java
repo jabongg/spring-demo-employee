@@ -7,8 +7,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.spring.learning.employee.dto.Address;
-import com.spring.learning.employee.dto.EmployeeDTO;
+import com.spring.learning.dto.Address;
+import com.spring.learning.dto.EmployeeDTO;
 
 public class HibernateTester {
 

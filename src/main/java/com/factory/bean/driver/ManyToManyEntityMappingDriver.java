@@ -7,8 +7,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.spring.learning.employee.dto.UserDetails;
-import com.spring.learning.employee.dto.Vehicle;
+import com.spring.learning.dto.UserDetails;
+import com.spring.learning.dto.Vehicle;
 
 public class ManyToManyEntityMappingDriver {
 
