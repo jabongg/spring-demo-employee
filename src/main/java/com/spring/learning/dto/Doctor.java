@@ -9,7 +9,47 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+//@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+/*
+ * 
+ * postgres=# select * from doctor;
+    doctortye    | doctorid |     doctorname     | doessurgery | givesadvice 
+-----------------+----------+--------------------+-------------+-------------
+ Doctor          |        1 | Dr. Arsad          |             | 
+ Surgeon         |        2 | Dr. Lohia          | t           | 
+ FamilyPhysician |        3 | Dr. Kartavya Shaah |             | t
+(3 rows)
+
+ */
+@Inheritance(strategy=InheritanceType.JOINED)
+
+/*
+ * postgres=# select * from doctor;
+    doctortye    | doctorid |     doctorname     
+-----------------+----------+--------------------
+ Doctor          |        1 | Dr. Arsad
+ Surgeon         |        2 | Dr. Lohia
+ FamilyPhysician |        3 | Dr. Kartavya Shaah
+(3 rows)
+
+postgres=# 
+postgres=# 
+postgres=# 
+postgres=# select * from surgeon;
+ doessurgery | doctorid 
+-------------+----------
+ t           |        2
+(1 row)
+
+postgres=# select * from familyphysician ;
+ givesadvice | doctorid 
+-------------+----------
+ t           |        3
+(1 row)
+
+postgres=# 
+
+ */
 @DiscriminatorColumn(discriminatorType=DiscriminatorType.STRING, name="DoctorTye")
 public class Doctor {
 
