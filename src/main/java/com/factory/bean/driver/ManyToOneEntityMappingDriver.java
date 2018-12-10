@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
 import com.spring.learning.employee.dto.UserDetails;
 import com.spring.learning.employee.dto.Vehicle;
 
-public class OneToManyEntityMappingDriver {
+public class ManyToOneEntityMappingDriver {
 
 	public static void main(String[] args) {
 
@@ -27,11 +27,11 @@ public class OneToManyEntityMappingDriver {
         	
         	Vehicle vehicle1 = new Vehicle();
         	vehicle1.setVehicleName("Bugati chiron");
- 	        
+ 	        vehicle1.setUser(user);
         	
         	Vehicle vehicle2 = new Vehicle();
         	vehicle2.setVehicleName("Porsche 911");
- 	        
+ 	        vehicle2.setUser(user);
         	
         	vehicles.add(vehicle1);
         	vehicles.add(vehicle2);

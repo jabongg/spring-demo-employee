@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 
 @Entity(name="user_details")
@@ -17,7 +19,11 @@ public class UserDetails {
 	private int userId;
 	private String userName;
 
-	@OneToMany(cascade={CascadeType.ALL})
+	@OneToMany(mappedBy="user", cascade={CascadeType.ALL})
+	/*@JoinTable(joinColumns=@JoinColumn(name="USER_ID"),
+	inverseJoinColumns=@JoinColumn(name="VEHICLE_ID"))*/
+	
+	
 	private List<Vehicle> vehicle;
 	
 	public int getUserId() {
